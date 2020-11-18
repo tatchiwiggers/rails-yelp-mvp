@@ -7,9 +7,11 @@
     <% @restaurant.reviews.each do |review| %>
         <p><%= review.content %></p>
         <p><%= '⭐' * review.rating %></p>
-        <%= link_to 'Delete Review', review_path(review), method: :delete %> |
+        <%= link_to 'Delete Review', review_path(review), method: :delete %>
     <% end %>
-
+    <br>
+    <br>
+    <br>
     <%= link_to  "Leave a review", new_restaurant_review_path(@restaurant) %> |
     <%= link_to "Back to Restaurants", restaurants_path %> |
     <%= link_to  "Edit Restaurant", edit_restaurant_path(@restaurant) %> |
