@@ -1,0 +1,15 @@
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <h1>All Restaurants</h1>
+        <div class="mt-4">
+          <% @restaurants.each do |restaurant| %>
+            <h5><%= link_to restaurant.name, restaurant_path(restaurant) %> - <%= restaurant.phone_number %></h5>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+      <%= link_to 'Create a new restaurant', new_restaurant_path %>
+  </div>
