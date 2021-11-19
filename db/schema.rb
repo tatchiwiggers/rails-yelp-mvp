@@ -10,15 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_12_144657) do
+ActiveRecord::Schema.define(version: 2021_11_19_170628) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "style"
+  end
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "phone_number"
-    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "type"
   end
 
   create_table "reviews", force: :cascade do |t|

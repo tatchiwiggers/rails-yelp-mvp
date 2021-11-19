@@ -3,9 +3,10 @@
       <div class="col">
         <%= simple_form_for (@restaurant) do |f| %>
           <%= f.input :name %>
-          <%= f.input :address %>
+          <%= f.input :address, as: :country %>
           <%= f.input :phone_number %>
-          <%= f.input :category, collection: ["Chinese", "Italian", "Japanese", "French", "Belgian"] %>
+          <%#= f.input :category, collection: ["Chinese", "Italian", "Japanese", "French", "Belgian"] %>
+          <%= f.input :type, as: :radio_buttons, collection: Category.all.map { |category| [category.name, category.id, { class: category.style }]} %>
           <%= f.submit "Create Restaurant", class: "btn btn-secondary" %>
         <% end %>
       </div>

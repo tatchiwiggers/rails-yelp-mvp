@@ -16,7 +16,15 @@ puts 'DB clean!'
     name: Faker::Restaurant.name,
     address: Faker::Address.city,
     phone_number: Faker::PhoneNumber.cell_phone,
-    category: ["Chinese", "Italian", "Japanese", "French", "Belgian"].sample
+    # category: ["Chinese", "Italian", "Japanese", "French", "Belgian"].sample
   )
   puts "Restaurant #{restaurant.id} was created."
+end
+
+Category.destroy_all
+
+5.times do
+  category = Category.create!(
+    name: Faker::Food.ethnic_category
+  )
 end
